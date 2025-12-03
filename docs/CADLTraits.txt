@@ -1,0 +1,67 @@
+
+==========================
+CADL Traits
+==========================
+
+This file provides the traits a cat can be assigned as well
+as the options for each trait. This information will be used 
+for the interpreter as well as the ASCII rendering file.
+
+-------------------------------------
+ TRAIT: ears
+-------------------------------------
+Values:
+    - pointy
+    - droopy
+    - round
+    - long
+    - short 
+
+-------------------------------------
+ TRAIT: mouth
+-------------------------------------
+Values: 
+    - smile
+    - frown
+    - neutral 
+    - open
+    - smirk
+
+-------------------------------------
+ TRAIT: body
+-------------------------------------
+Values:
+    - smooth
+    - fluffy
+    - normal 
+    - chubby
+
+-------------------------------------
+ TRAIT: tail
+-------------------------------------
+Values:
+    - fluffy
+    - straight
+    - curled 
+
+-------------------------------------
+ TRAIT: mood
+-------------------------------------
+Values:
+    - happy 
+    - sleepy
+    - excited
+    - loving
+    - curious
+    - angry   
+Note:
+    Mood will override any other traits as 
+    they are basically a preset        
+
+-------------------------------------
+ TRAIT: whiskers
+-------------------------------------
+Values:
+    - long
+    - short
+    - curled
