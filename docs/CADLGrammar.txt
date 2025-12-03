@@ -1,4 +1,7 @@
-CADL Grammar
+
+========================
+CADL Grammar 
+========================
 
 # program : {CAT,ID,FUNC,DRAW,RANDOMCAT,RETURN,IF,WHILE,LCURLY} stmt_list
 
