@@ -23,7 +23,8 @@ Values:
 Values: 
     - smile
     - frown
-    - neutral 
+    - kiss
+    - scowl
     - open
     - smirk
 
@@ -37,7 +38,7 @@ Values:
     - chubby
 
 -------------------------------------
- TRAIT: tail
+ TRAIT: tails
 -------------------------------------
 Values:
     - fluffy
@@ -45,7 +46,7 @@ Values:
     - curled 
 
 -------------------------------------
- TRAIT: mood
+ TRAIT: moods
 -------------------------------------
 Values:
     - happy 
@@ -53,10 +54,13 @@ Values:
     - excited
     - loving
     - curious
-    - angry   
+    - angry  
+    - sad 
 Note:
-    Mood will override any other traits as 
-    they are basically a preset        
+    Mood affects the eyes of the cat.
+    If only a mood is selected and no
+    other traits a preset built cat
+    will be used.     
 
 -------------------------------------
  TRAIT: whiskers

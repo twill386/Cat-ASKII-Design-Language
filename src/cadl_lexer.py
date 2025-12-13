@@ -24,10 +24,10 @@ token_specs = [
     ('WHILE',      r'while'),
     ('IF',         r'if'),
     ('ELSE',       r'else'),
-    ('NOT',        r'not'),
     # Operators
     ('EQ',         r'=='),
-    ('NOTEQ',     r'!='),
+    ('NOTEQ',      r'!='),
+    ('NOT',        r'!'),  # allow ! unless it’s part of !=
     ('ASSIGN',     r'='),
     ('DOT',        r'\.'),
     # Punctuation

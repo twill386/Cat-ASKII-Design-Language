@@ -25,10 +25,9 @@ class CADLInterpWalk:
     def apply_mood_override(self, cat):
         """
         Adjust cat traits based on mood.
-        Only uses traits that exist in CADLTraits.txt
-        and are supported by the ASCII renderer.
         """
         traits = cat["traits"]
+        mouth_locked = "mouth" in traits
         mood = traits.get("mood")
 
         if mood is None:
@@ -38,33 +37,46 @@ class CADLInterpWalk:
 
         if mood == "sleepy":
             traits["ears"] = "droopy"
-            traits["mouth"] = "neutral"
+            if not mouth_locked:
+                traits["mouth"] = "neutral"
             traits["whiskers"] = "short"
 
         elif mood == "happy":
-            traits["mouth"] = "smile"
-            traits["ears"] = "pointy"
+            if not mouth_locked:
+                traits["mouth"] = "smile"
+            traits["ears"] = "short"
             traits["whiskers"] = "long"
 
         elif mood == "angry":
-            traits["mouth"] = "frown"
-            traits["ears"] = "short"
+            if not mouth_locked:
+                traits["mouth"] = "scowl"
+            traits["ears"] = "round"
             traits["whiskers"] = "curled"
 
         elif mood == "loving":
-            traits["mouth"] = "smile"
-            traits["ears"] = "round"
+            if not mouth_locked:
+                traits["mouth"] = "kiss"
+            traits["ears"] = "pointy"
             traits["whiskers"] = "long"
 
         elif mood == "curious":
-            traits["ears"] = "pointy"
-            traits["mouth"] = "neutral"
+            traits["ears"] = "short"
+            if not mouth_locked:
+                traits["mouth"] = None
             traits["whiskers"] = "long"
 
         elif mood == "excited":
-            traits["mouth"] = "open"
+            if not mouth_locked:
+                traits["mouth"] = "open"
             traits["ears"] = "long"
             traits["whiskers"] = "long"
+        
+        elif mood == "sad":
+            if not mouth_locked:
+                traits["mouth"] = "frown"
+            traits["ears"] = "droopy"
+            traits["whiskers"] = "short"
+
 
         return cat
 
@@ -123,6 +135,9 @@ class CADLInterpWalk:
             cat = symtab.lookup(name)
             cat = self.apply_mood_override(cat)
             print(render_cat(cat))
+            # Print the cat's ID as its name unless ID is "noname"
+            if name.lower() != "noname":
+                print(name)
             return
 
         # RANDOMCATDECL / ASSIGN_RANDOMCAT
@@ -320,7 +335,7 @@ class CADLInterpWalk:
         symtab.pop_scope()
         return result
 
-    # Main Dispatcher
+    # Dispatcher
     ####################################################################
     def visit(self, node):
         if isinstance(node, tuple):

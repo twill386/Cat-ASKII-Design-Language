@@ -1,0 +1,11 @@
+cat Luna {
+    mood = "loving";
+    ears = "round";
+}
+
+if (!(Luna.mood != "happy")) {
+    Luna.mouth = "scowl";
+    draw Luna;
+}else{
+    draw Luna;
+}

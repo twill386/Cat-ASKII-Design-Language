@@ -1,0 +1,12 @@
+cat Miso {
+    mood = "excited";
+    ears = "pointy";
+    tail = "curled";
+}
+
+if (Miso.mood == "sleepy") {
+    draw Miso;
+} else {
+    Miso.mood = "happy";
+    draw Miso;
+}

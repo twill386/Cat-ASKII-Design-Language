@@ -1,0 +1,13 @@
+cat Miso {
+    mood = "excited";
+    ears = "pointy";
+    tail = "curled";
+}
+
+while (Miso.mood != "sleepy") {
+    draw Miso;            
+    Miso.mood = "sleepy"; // change condition to exit after one loop
+    Miso.tail = "fluffy"; 
+}
+
+draw Miso;               

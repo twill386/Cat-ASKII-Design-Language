@@ -41,6 +41,8 @@ def eyes_for_mood(mood: str) -> str:
         return "o.o"
     if mood == "angry":
         return "¬.¬"
+    if mood == "sad":
+        return "u.u"
     return "o.o"   # default
 
 
@@ -48,14 +50,18 @@ def mouth_char(mouth: str) -> str:
     mouth = (mouth or "neutral").lower()
 
     if mouth == "smile":
-        return "_"
+        return "w"
     if mouth == "frown":
-        return "~"
+        return "_"
+    if mouth == "scowl":
+        return "x"
+    if mouth == "kiss":
+        return "3"
     if mouth == "open":
         return "o"
     if mouth == "smirk":
         return "/"
-    return "-"  # neutral
+    return "."  # neutral
 
 
 def core_face(mood: str, mouth: str) -> str:
