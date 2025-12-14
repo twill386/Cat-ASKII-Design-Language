@@ -38,7 +38,7 @@ Values:
     - chubby
 
 -------------------------------------
- TRAIT: tails
+ TRAIT: tail
 -------------------------------------
 Values:
     - fluffy
@@ -46,7 +46,7 @@ Values:
     - curled 
 
 -------------------------------------
- TRAIT: moods
+ TRAIT: mood
 -------------------------------------
 Values:
     - happy 
