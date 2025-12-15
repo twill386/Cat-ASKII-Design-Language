@@ -7,6 +7,7 @@ cat Miso {
 while (Miso.mood != "sleepy") {
     draw Miso;            
     Miso.mood = "sleepy"; // change condition to exit after one loop
+    Miso.mouth = "None";
     Miso.tail = "fluffy"; 
 }
 
